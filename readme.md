@@ -1,6 +1,6 @@
 # Local Competition Prepare Repo
   
-## 과제 정리 파일 링크 [^_____^](Resourece.md)
+## 과제 정리 파일 링크 [^_____^](https://github.com/qetqet910/Competition/blob/master/Resource.md)
 
 ### 3 - 17
 
