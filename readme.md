@@ -1,6 +1,4 @@
 # Local Competition Prepare Repo
-  
-## 과제 정리 파일 링크 [^_____^](Resourece.md)
 
 ### 3 - 17
 
@@ -30,3 +28,4 @@
 
 ### 3 - 21
 
+## 과제 정리 파일 링크 [^_____^](Resourece.md)
