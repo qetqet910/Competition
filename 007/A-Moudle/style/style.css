@@ -104,7 +104,7 @@ body{
 
 .Social{
     right: 3%;
-    bottom: 14%;
+    bottom: 12%;
 }
 .Social a{
     background: url(../img/SNS/SNS.png) no-repeat;
@@ -138,8 +138,18 @@ body{
     font-size: 4.4rem;
     font-weight: bold;
     color: black;
-    margin-top: 40px;
+    margin-top: 30px;
     line-height: 62px;
+    letter-spacing:-3px;
+    word-spacing: 3px;
+}
+.TINY{
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #999;
+    margin-top: 20px;
+    margin-left: 6px;
     letter-spacing:-3px;
     word-spacing: 3px;
 }
@@ -229,14 +239,22 @@ section{
     background-color: var(--color-M2);
 }
 .slogan img{
+    position: relative;
     width: 100%;
     z-index: 20;
     border-radius: 10px;
-    border: 5px solid white;
-    box-shadow: 0px 0px 10px #333;
     margin-bottom: 100px;
     user-select: none;
 }
+/* .slogan img::after{
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -100%;
+    width: 100%;
+    height: 100px;
+    background: white;
+} */
 .slogan .innerSLO{
     position: relative;
     display: flex;
