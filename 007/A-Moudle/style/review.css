@@ -32,7 +32,9 @@ body{
     bottom: 5%;
     border-radius: 50%;
     background-color: royalblue;
+    transition: all .25s;
     cursor: pointer;
+    z-index: 999;
 }
 .icons input{
     display: none;
@@ -43,6 +45,10 @@ body{
     pointer-events: none;
     margin-bottom: 2px;
 }
+.icons:active,
+.icons:hover{
+    box-shadow: 2px 2px 5px #999;
+}
 /* 구매후기 안내 이미지 */
 
 .Sec1{
@@ -52,7 +58,7 @@ body{
     align-items: center;
     width: 100%;
     height: 600px;
-    margin-bottom: 300px;
+    margin-bottom: 180px;
     background: url(../img/Picture/photo.jpg) no-repeat center;
     background-size: 100%;
     animation: imger 2s ease-in-out;
@@ -79,9 +85,9 @@ body{
 .Sec1 span{
     display: block;
     text-align: center;
-    font-size: 6rem;
-    color: white;   
+    font-size: 8rem;
     font-weight: bold;
+    color: white;   
     text-shadow: 2px 2px 4px royalblue;
     z-index: 999;
     margin-bottom: 60px;
@@ -125,15 +131,25 @@ body{
     margin: 0 auto;
     padding-bottom: 200px;
 }
-.Sec3 .reviews .stick{
+.Sec3 .reviews a .stick{
     position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 200px;
-    padding: 24px 0px 24px 180px;
+    height: 160px;
+    padding: 0px 0px 0px 180px;
+    margin: 40px 0px;
 }
-.Sec3 .reviews .stick img{
+.Sec3 .reviews a .stick::after{
+    content: '';
+    position: absolute;
+    right: 0px;
+    top: 10%;
+    width: 3px;
+    height: 70%;
+    background-color: #999;
+}
+.Sec3 .reviews a .stick img{
     position: absolute;
     left: 0%;
     width: 148px;

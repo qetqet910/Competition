@@ -23,6 +23,7 @@ body{
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* 메뉴 버튼 */
@@ -109,8 +110,7 @@ body{
     background: url(../img/SNS/SNS.png) no-repeat;
     background-size: 190px;
 }
-.Social a:nth-of-type(1){
-}.Social a:nth-of-type(2){
+.Social a:nth-of-type(2){
     background-position-x: -102.5px;
 }.Social a:nth-of-type(3){
     background-position-x: -51px;
@@ -158,7 +158,7 @@ body{
     cursor: pointer;
     animation: direct 2s infinite ease-in-out;
 }
-
+/* 바로가기 애니메이션 */
 @keyframes direct{
     0%{
         transform: scale(1) translateY(0px);
@@ -172,6 +172,7 @@ body{
 }
 
 /* 섹션 스타일 */
+/* 특산물 */
 section{
     position: relative;
     display: block;
@@ -185,7 +186,7 @@ section{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1280px;
+    max-width: 1460px;
     width: 100%;
     margin: 0 auto;
 }
@@ -214,44 +215,161 @@ section{
     margin-right: 10px;
     color: #64a7ff;
 }
-
+/* 슬로건 */
 .slogan{
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 200px 0px; 
+    align-items: flex-start;
+    flex-direction: column;
     padding: 0px;
     width: 100%;
-    height: 400px;
-    box-shadow: 0 0 10px 10px white inset;
-    overflow: hidden;
+    height: auto;
+    margin: 100px 0px;
+    background-color: var(--color-M2);
 }
 .slogan img{
-    width: 80%;
+    width: 100%;
     z-index: 20;
-    box-shadow: 2px 2px 5px #333;
     border-radius: 10px;
+    border: 5px solid white;
+    box-shadow: 0px 0px 10px #333;
+    margin-bottom: 100px;
+    user-select: none;
 }
-.slogan::after,
-.slogan::before{
-    content: '';
+.slogan .innerSLO{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    max-width: 1460px;
+    width: 100%;
+    margin: 100px auto; 
+    text-align: right;
+}
+
+/* 카드 섹션 */
+.Cards .innerCards{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1460px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+.Cards .innerCards .left{
     position: absolute;
     left: 0px;
-    top: 33%;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.Cards .innerCards .right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 50%;
+}
+.Cards .innerCards .right img{
+    display: block;
+    width: 60%;
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
+    animation: 2s imger ease-in-out;
+    filter: blur(0px);
+    margin-right: 10px;
+    color: #64a7ff;
+}
+.Cards .innerCards .right div{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.Cards .innerCards .right div img{
     width: 100%;
-    height: 20px;
-    background: #333;
-    transform: translateY(-50%);
-    z-index: 10;
-}
-.slogan::before{
-    top: 66%;
 }
 
-/* 64A8FF, 1957C2 */
+/* 리뷰 섹션 */
 
+.Review{
+    background-color: var(--color-M2);
+}
+.innerReview{
+    position: relative;
+    max-width: 1460px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    margin: 100px auto;
+    min-height: 600px;
+}
+.innerReview .left{
+    position: relative;
+}
+.innerReview .left img{
+    position: absolute;
+    display: block;
+    width: 50%;
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
+    animation: 2s imger ease-in-out;
+    filter: blur(0px);
+    margin-right: 10px;
+    color: #64a7ff;
+}
+.innerReview .left img:nth-child(1){right: 10%; top: 2%;}
+.innerReview .left img:nth-child(2){left: 10%; bottom: 2%;}
 
+.innerReview .right {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    justify-items: flex-end;
+    flex-direction: column;
+    text-align: right;
+}
+.innerReview .right .direct{
+    all: unset;
+    position: absolute;
+    right: 1%;
+    bottom: 5%;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: var(--color-M3);
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    animation: direct 2s infinite ease-in-out;
+}
+
+.footer{
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.footer span{
+    position: absolute;
+    display: block;
+    right: 2%;
+    bottom: 2%;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #999;
+}
 
 
 
@@ -280,14 +398,32 @@ section{
 
 @keyframes imger {
     0%{
-        filter: blur(10px);
+        filter: blur(6px);
     }
     100%{
         filter: blur(0px);
     }
 }
 
-/* .Special{
+/* .slogan::after,
+.slogan::before{
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 33%;
+    width: 100%;
+    height: 20px;
+    background: #333;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+.slogan::before{
+    top: 66%;
+} */
+
+/* 64A8FF, 1957C2 */
+/*
+.Special{
 }
 .Special .introduce{
     display: flex;
