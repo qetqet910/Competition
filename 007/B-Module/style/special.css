@@ -1,0 +1,90 @@
+::-webkit-scrollbar{
+    display: none;
+}
+
+:root{
+    --color-M1: #fff;
+    --color-M2: #f9fafb;
+    --color-M3: #3182F6;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+/* 이벤트 안내 이미지 */
+
+.Sec1{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+    margin-bottom: 180px;
+    background: url(../img/Picture/photo24.jpg) no-repeat center;
+    background-size: 100%;
+    animation: imger 2s ease-in-out;
+    filter: blur(0px);
+}
+.Sec1::after{
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, white);
+}
+.Sec1::before{
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .2);
+}
+.Sec1 span{
+    display: block;
+    text-align: center;
+    font-size: 8rem;
+    font-weight: bold;
+    color: white;   
+    text-shadow: 2px 2px 4px royalblue;
+    z-index: 999;
+    margin-bottom: 60px;
+}
+@keyframes imger {
+    0%{
+        filter: blur(10px);
+    }
+    100%{
+        filter: blur(0px);
+    }
+}
+
+.Sec2{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 600px;
+    background-color: var(--color-M2);
+}
+.Sec2 span{
+    position: relative;
+    padding: 0px 300px;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+}
