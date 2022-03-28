@@ -190,6 +190,14 @@ html{
     opacity: 0;
     transition: all .5s;
 }
+.pan .opened span:nth-of-type(2) span{
+    transform: rotateY(0deg) translate(-50%, -50%);
+}
+.pan .opened span:nth-of-type(1){transform: rotateY(180deg);}
+.pan .opened span:nth-of-type(2){transform: rotateY(0deg);}
+
+.pan .closed span:nth-of-type(1){transform: rotateY(0deg);}
+.pan .closed span:nth-of-type(2){transform: rotateY(180deg);}
 
 .right{
     position: relative;
