@@ -156,7 +156,7 @@
                 <div class="middle">
                     <div class="timer">
                         <label for="time">남은 시간</label>
-                        <input readonly value="01 : 30" type="text" id="time">
+                        <input readonly value="00 : 00" type="text" id="time">
                     </div>
                     <div class="collect">
                         <label for="collect">찾은 카드 수</label>
@@ -169,17 +169,31 @@
                 </div>
                 <form class="FORM">
                     <ul>
-                        <li>
-                            <!-- <span>👍</span>
-                            <span>2022-03-24</span> -->
-                        </li>
+                        <!-- <span>👍</span>
+                        <span>2022-03-24</span> -->
+                        <li></li>
                         <li></li>
                         <li></li>
                     </ul>
-                    <button>출석</button>
                 </form>
             </div>
         </div>
     </section>
+    <div class="modal">
+        <div class="inner">
+            <div>
+                <h1 class="TITLE">정보를 입력하고 경품을 받아가세요!</h1>
+                <h3 class="TINY">이벤트 참여 정보</h3>
+                <div class="score"></div>
+            </div>
+            <div>
+                <form>
+                    <input required min="2" maxlength="50" size="11" minlength="2" class="name" type="text" placeholder="이름을 입력해주세요">
+                    <input required class="tel" size="13" maxlength="13" type="tel" placeholder="전화번호를 입력해주세요">
+                    <button class="sub" type="submit">등록</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

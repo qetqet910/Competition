@@ -6,6 +6,15 @@ const collected = document.querySelector("#collect");
 const startBtn = document.querySelector(".bottom button:nth-child(1)")
 const hintBtn = document.querySelector(".bottom button:nth-child(2)")
 
+const modal = document.querySelector(".modal");
+const Score = document.querySelector(".score");
+const name = document.querySelector(".name");
+const tel = document.querySelector(".tel");
+const sub = document.querySelector(".sub");
+
+let Time = null;
+let Once = 0;
+
 //////////////////////////////////////////////////////////////////
 
 
@@ -48,7 +57,7 @@ const startTimer = (Sec) => {
     let FSe = String(Sec%60).padStart(2, '0');
     TimeCount.value = `${Fmin} : ${FSe}`;
 
-    const Time = setIntervalCus(1, () => {
+    Time = setIntervalCus(1, () => {
         let min = String(parseInt(Sec/60)).padStart(2, '0');
         let Se = String(Sec%60).padStart(2, '0');
         
@@ -67,7 +76,8 @@ const startTimer = (Sec) => {
 
             // 게임 종료
         }else if(min === "00" && Se === "00" && Stack == 1){
-
+            EndGame();
+            clearInterval(Time);
         }
     });
     gameStatus = true;
@@ -163,7 +173,12 @@ startBtn.addEventListener('click', (e) => {
             I = 0;
         }, 5000);
     }else if(InTe === "다시하기" & I == 0){
-        // 
+        DirtyClear();
+        gameStart();
+        I = 1;
+        setTimeout(() => {  
+            I = 0;
+        }, 5000);
     }else{
         return ;
     }
@@ -171,8 +186,9 @@ startBtn.addEventListener('click', (e) => {
 
 // 힌트 보기 
 hintBtn.addEventListener("click", (e) => {
+    let ASDF = [];
+    
     if(gameStatus === true){
-        let ASDF = [];
         cards.forEach(ele => {
             if(ele.classList.value != "opened"){
                 ASDF.push(ele)
@@ -180,8 +196,10 @@ hintBtn.addEventListener("click", (e) => {
         });
         AllopenFC();
         setTimeout(() => {
-            ASDF.target.classList.remove("opened");
-            ASDF.target.classList.add("closed");
+            ASDF.forEach(ele => {
+                ele.classList.remove("opened");
+                ele.classList.add("closed");
+            })
         }, 3000);
     }
 })
@@ -223,12 +241,16 @@ function CollCards(){
                             const span = ele.querySelector("span:nth-of-type(2) span");
                             span.style.opacity = '1';
                         });
-                    countUp();
+                        EA = [];
+                        COLL = [];
+                        My = '';
+                        My1 = '';
+                        countUp();
+                        if(count == 8){
+                            
+                            EndGame();
+                        }
                     }, 1000)
-                    EA = [];
-                    COLL = [];
-                    My = '';
-                    My1 = '';
                     console.log("3");;    
                 }else if(My != My1){
                     setTimeout(() => {
@@ -236,11 +258,11 @@ function CollCards(){
                             ele.classList.remove("opened");
                             ele.classList.add("closed");
                         });
+                        EA = [];
+                        COLL = [];
+                        My = '';
+                        My1 = '';
                     }, 3000);
-                    EA = [];
-                    COLL = [];
-                    My = '';
-                    My1 = '';
                 console.log("4");
                 }
             }
@@ -253,4 +275,113 @@ function countUp(){
     collected.value = count;
 }
 
+function EndGame(){
+    let CHK = []
+    let MIS = []
+
+    cards.forEach(ele => {
+        const span = ele.querySelector("span:nth-of-type(2) span");
+        span.style.opacity = '1';  
+        if(ele.classList.value == "opened"){
+            CHK.push(ele);
+        }else{
+            MIS.push(ele);
+        }
+    })
+
+    AllopenFC();
+
+    setTimeout(() => {
+        CHK.forEach(ele => {
+            ele.style.boxShadow = "0px 0px 12px royalblue";
+        });
+        MIS.forEach(ele => {
+            ele.style.boxShadow = "0px 0px 12px orangered";
+        });
+        CHK = []
+        MIS = []
+        My = '';
+        My1 = '';
+
+        OnModal();
+        clearInterval(Time);
+    }, 2000)
+}
 //////////////////////////////////////////////////////////////////
+
+function OnModal(){
+    modal.style.opacity = "1";
+    modal.style.zIndex = "999"; 
+    Score.innerText = `${count}점`;
+}
+
+function OffModal(){
+    Score.value = '';
+    name.value = '';
+    tel.value = '';
+    Score.innerText = `${count}점`;
+    modal.style.opacity = "0";
+    modal.style.zIndex = "-999"; 
+}
+
+name.addEventListener('keyup', (e) => {
+    e.target.value = e.target.value.replace(/[^ㄱ-힣a-zA-Z]/gi,"")
+})
+tel.addEventListener('keyup', (e) => {
+    e.target.value = e.target.value.replace(/[^0-9]/g, '').replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, '$1-$2-$3').replace(/(\-{1,2})$/g, "");
+})
+sub.addEventListener('click', (e) => {
+    e.preventDefault();
+    if(tel.value.replace("-", "").replace("-", "").length == 11 && tel.value != null && name.value != null){
+        alert("이벤트에 참여해 주셔서 감사합니다.")
+        OffModal();
+        Once++;
+        Stamping();
+        DirtyClear();
+    }else{
+        alert("값이 형식에 맞지 않습니다, 다시 한 번 확인해주십시오.")
+    }
+})
+
+function Stamping(){
+    const date = new Date();
+    const Y = date.getFullYear();
+    const M = String(date.getMonth() + 1).padStart(2, "0");
+    const D = String(date.getDate()).padStart(2, "0");
+    const Today = `${Y}-${M}-${D}`;
+
+    const Checks = document.querySelector(".FORM ul");
+    const C1 = Checks.querySelector('li:nth-child(1)');
+    const C2 = Checks.querySelector('li:nth-child(2)');
+    const C3 = Checks.querySelector('li:nth-child(3)');
+
+    const Good = document.createElement('span');
+    const Todays = document.createElement('span');
+    Todays.innerText = Today;
+    Good.innerText = '👍';
+
+    if(Once == 1){
+        C1.append(Good);
+        C1.appendChild(Todays)
+    }else if(Once == 2){
+        C2.append(Good);
+        C2.appendChild(Todays) 
+    }else if(Once == 3){
+        C3.append(Good);
+        C3.appendChild(Todays)
+    }    
+}
+
+function DirtyClear(){
+    clearInterval(Time);
+    cards.forEach(ele => {
+        const span = ele.querySelector("span:nth-of-type(2) span");
+        ele.style.boxShadow = `0px 0px 0px transparent`;
+        span.style.opacity = 0;
+    });
+    startBtn.innerText = "시작하기"
+    Timeout = false;
+    Stack = 0;
+    I = 0;
+    gameStatus = false
+}
