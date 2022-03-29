@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style/review.css">
     <script src="https://kit.fontawesome.com/290aa9bf0d.js" defer crossorigin="anonymous"></script>
+    <script src="JS/Review.js" defer></script>
 </head>
 
 <body>
@@ -339,6 +340,43 @@
             </ul>
         </ul>
     </section>
+    <div class="modal">
+        <div class="inner">
+            <div>
+                <h1 class="TITLE">후기 작성 폼</h1>
+                <h3 class="TINY">경남의 따듯한 마음, 느낀 그대로 써주세요!</h3>
+                <div class="score"></div>
+            </div>
+            <div>
+                <form>
+                    <div id="top">
+                        <input required min="2" maxlength="50" size="11" minlength="2" class="namee" type="text" placeholder="이름을 입력해주세요">
+                        <input required type="text" class="item" placeholder="구매품을 입력해주세요.">
+                        <input required type="text" class="place" placeholder="구매처를 입력해주세요.">
+                        <input required type="date" class="date" >
+                    </div>
+                    <div id="middle">
+                        <div class="star">
+                            <label>별점</label>
+                            <span id="stars">
+                                ★★★★★
+                                <span>★★★★★</span>
+                                <input type="range" value="1" step="1" min="0" max="10" class="stars">
+                            </span>
+                        </div>
+                        <button class="addIMG">사진추가</button>
+                    </div>
+                    <div id="bottom">
+                        <textarea required spellcheck="false" name="des" id="des" placeholder="내용을 입력해주세요."></textarea>
+                    </div>
+                    <div id="under">
+                        <input type="file" name="SpeImg" class="img" accept="image/jpg">
+                        <button class="sub" type="submit">후기등록</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

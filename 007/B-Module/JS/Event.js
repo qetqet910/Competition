@@ -338,6 +338,8 @@ sub.addEventListener('click', (e) => {
         Once++;
         Stamping();
         DirtyClear();
+        AllCloseFC();
+        TimeCount.innerText = '00 : 00';
     }else{
         alert("값이 형식에 맞지 않습니다, 다시 한 번 확인해주십시오.")
     }
