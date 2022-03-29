@@ -345,10 +345,12 @@
             <div>
                 <h1 class="TITLE">후기 작성 폼</h1>
                 <h3 class="TINY">경남의 따듯한 마음, 느낀 그대로 써주세요!</h3>
-                <div class="score"></div>
+                <div class="close">
+                    ❌
+                </div>
             </div>
             <div>
-                <form>
+                <form method="POST">
                     <div id="top">
                         <input required min="2" maxlength="50" size="11" minlength="2" class="namee" type="text" placeholder="이름을 입력해주세요">
                         <input required type="text" class="item" placeholder="구매품을 입력해주세요.">
@@ -361,8 +363,9 @@
                             <span id="stars">
                                 ★★★★★
                                 <span>★★★★★</span>
-                                <input type="range" value="1" step="1" min="0" max="10" class="stars">
+                                <input type="range" onHo oninput="StarsGO(this)" value="1" step="1" min="0" max="10" class="stars">
                             </span>
+                            <label class="cnt">0</label>
                         </div>
                         <button class="addIMG">사진추가</button>
                     </div>
@@ -370,7 +373,7 @@
                         <textarea required spellcheck="false" name="des" id="des" placeholder="내용을 입력해주세요."></textarea>
                     </div>
                     <div id="under">
-                        <input type="file" name="SpeImg" class="img" accept="image/jpg">
+                        <input type="file" onchange="fileChecking(this)" name="SpeImg" class="img" accept="image/jpg">
                         <button class="sub" type="submit">후기등록</button>
                     </div>
                 </form>
