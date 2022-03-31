@@ -75,7 +75,7 @@ function fileChecking(obj){
 }
 
 Sub.addEventListener('click', (e) => {
-    if(Name.value.length > 1 && 50 > Name.value.length){
+    if(Name.value.length > 1 && 50 > Name.value.length && Item.value != null){
         alert("­구매 후기가 등록되었습니다.")
         OffModal();
     }else{

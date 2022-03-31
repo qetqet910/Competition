@@ -274,6 +274,10 @@ function countUp(){
     count++;
     collected.value = count;
 }
+function countClear(){
+    count = 0;
+    collected.value = count;
+}
 
 function EndGame(){
     let CHK = []
@@ -386,4 +390,5 @@ function DirtyClear(){
     Stack = 0;
     I = 0;
     gameStatus = false
+    countClear();
 }

@@ -1,0 +1,688 @@
+::-webkit-scrollbar{
+    display: none;
+}
+:root{
+    --color-M1: #fff;
+    --color-M2: #f9fafb;
+    --color-M3: #3182F6;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* 메뉴 버튼 */
+
+#icon{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+#icon input{
+    display: none;
+}
+#icon label{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: royalblue;
+    z-index: 999;
+    cursor: pointer;
+    transition: all .5s;
+    border: 2px solid white;   
+}
+#icon a{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: royalblue;
+    transition: all .5s;
+    border: 2px solid white;
+}
+.icons{
+    right: 3%;
+    bottom: 6%;
+}.icons label::after,
+.icons label::before{
+    content: '';
+    position: absolute;
+    left: 16%;
+    top: 45%;
+    width: 24px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all .5s;
+}.icons label::after{
+    transform: rotate(0deg);
+}.icons label::before{
+    transform: rotate(90deg);
+}
+#MenuBTN:checked ~ a{
+    transform: translateX(calc(-42px * var(--i)));
+    transition-delay: calc(0.16s * var(--i));
+}
+#MenuBTN:checked ~ label::after,
+#MenuBTN:checked ~ label::before{
+    transform: rotate(0deg);
+}
+
+/* 공유 버튼  */
+
+.Social{
+    right: 3%;
+    bottom: 12%;
+}
+.Social a{
+    background: url(../img/SNS/SNS.png) no-repeat;
+    background-size: 190px;
+}
+.Social a:nth-of-type(2){
+    background-position-x: -102.5px;
+}.Social a:nth-of-type(3){
+    background-position-x: -51px;
+}
+#SocialBTN:checked ~ label{
+    transform: rotate(360deg);
+}
+#SocialBTN:checked ~ a{
+    transform: translateX(calc(-42px * var(--i)));
+    transition-delay: calc(0.16s * var(--i));
+}
+
+/* 아이콘 끝  */
+
+/* 글씨 클래스 생성 */
+
+.TITLE{
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--color-M3);
+}
+.IMP{
+    display: inline-block;
+    font-size: 4.4rem;
+    font-weight: bold;
+    color: black;
+    margin-top: 30px;
+    line-height: 62px;
+    letter-spacing:-3px;
+    word-spacing: 3px;
+}
+.TINY{
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #999;
+    margin-top: 20px;
+    margin-left: 6px;
+    letter-spacing:-3px;
+    word-spacing: 3px;
+}
+.direct{
+    position: absolute;
+    left: 1%;
+    bottom: 5%;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: var(--color-M3);
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    animation: direct 2s infinite ease-in-out;
+}
+/* 바로가기 애니메이션 */
+@keyframes direct{
+    0%{
+        transform: scale(1) translateY(0px);
+    }
+    50%{
+        transform: scale(1.05) translateY(-10px);
+    }
+    100%{
+        transform: scale(1) translateY(0px);
+    }
+}
+
+/* 섹션 스타일 */
+/* 특산물 */
+section{
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    margin-bottom: 100px;
+    padding-top: 100px;
+    min-height: calc(100vh - 200px);
+}.INFO{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1460px;
+    width: 100%;
+    margin: 0 auto;
+}
+.INFO .ab{
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    left: 0%;
+    top: 0%;
+}
+.INFO .right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+.INFO .right img{
+    display: block;
+    width: 30%;
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
+    animation: 2s imger ease-in-out;
+    filter: blur(0px);
+    margin-right: 10px;
+    color: #64a7ff;
+}
+/* 슬로건 */
+.slogan{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0px;
+    width: 100%;
+    height: auto;
+    margin: 100px 0px;
+    background-color: var(--color-M2);
+}
+.slogan img{
+    position: relative;
+    width: 100%;
+    z-index: 20;
+    border-radius: 10px;
+    margin-bottom: 100px;
+    user-select: none;
+}
+/* .slogan img::after{
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -100%;
+    width: 100%;
+    height: 100px;
+    background: white;
+} */
+.slogan .innerSLO{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    max-width: 1460px;
+    width: 100%;
+    margin: 100px auto; 
+    text-align: right;
+}
+
+/* 카드 섹션 */
+.Cards .innerCards{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1460px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+.Cards .innerCards .left{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.Cards .innerCards .right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 50%;
+}
+.Cards .innerCards .right img{
+    display: block;
+    width: 60%;
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
+    animation: 2s imger ease-in-out;
+    filter: blur(0px);
+    margin-right: 10px;
+    color: #64a7ff;
+}
+.Cards .innerCards .right div{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.Cards .innerCards .right div img{
+    width: 100%;
+}
+
+/* 리뷰 섹션 */
+
+.Review{
+    background-color: var(--color-M2);
+}
+.innerReview{
+    position: relative;
+    max-width: 1460px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    margin: 100px auto;
+    min-height: 600px;
+}
+.innerReview .left{
+    position: relative;
+}
+.innerReview .left img{
+    position: absolute;
+    display: block;
+    width: 50%;
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
+    animation: 2s imger ease-in-out;
+    filter: blur(0px);
+    margin-right: 10px;
+    color: #64a7ff;
+}
+.innerReview .left img:nth-child(1){right: 10%; top: 2%;}
+.innerReview .left img:nth-child(2){left: 10%; bottom: 2%;}
+
+.innerReview .right {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    justify-items: flex-end;
+    flex-direction: column;
+    text-align: right;
+}
+.innerReview .right .direct{
+    all: unset;
+    position: absolute;
+    right: 1%;
+    bottom: 5%;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: var(--color-M3);
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    animation: direct 2s infinite ease-in-out;
+}
+
+.footer{
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.footer span{
+    position: absolute;
+    display: block;
+    right: 2%;
+    bottom: 2%;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #999;
+}
+
+.SpecialINFO:hover ~ .icons a:nth-of-type(1) {
+    background-color: red !important;
+}
+.Cards:hover ~ .icons a:nth-of-type(2) {
+    background-color: red !important;
+}
+.Review:hover ~ .icons a:nth-of-type(3) {
+    background-color: red !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes imger {
+    0%{
+        filter: blur(6px);
+    }
+    100%{
+        filter: blur(0px);
+    }
+}
+
+/* .slogan::after,
+.slogan::before{
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 33%;
+    width: 100%;
+    height: 20px;
+    background: #333;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+.slogan::before{
+    top: 66%;
+} */
+
+/* 64A8FF, 1957C2 */
+/*
+.Special{
+}
+.Special .introduce{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.Special .introduce .Main1{
+    width: 48%;
+    background-color: rgba(255, 255, 255, .5);
+    box-shadow: inset 2px 2px 10px #333, 10px 10px 20px rgba(0, 0, 0, .5);
+    min-height: 400px;
+    border-radius: 5px;
+    padding: 20px;
+}
+.Special .introduce .Main1 span{
+    display: block;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2.2rem;
+    color: black;
+    margin-top: 10px;
+}
+.Special .introduce .Main1 span ul{
+    margin-top: 20px;
+    font-size: 2rem;
+}
+.Special .introduce .Main2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48%;
+    background-color: rgba(255, 255, 255, .5);
+    box-shadow: inset 2px 2px 10px #333, 10px 10px 20px rgba(0, 0, 0, .5);
+    min-height: 400px;
+    border-radius: 5px;
+}
+
+.Special .introduce .Main2 img{
+    animation: imgA 1s ease-in-out;
+    box-shadow: 5px 5px 10px #333;
+}
+@keyframes imgA {
+    0%{
+        opacity: .5;
+        transform: scale(2);
+        filter: blur(8px); 
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1.0);
+        filter: blur(0px);
+    }
+}
+
+.CardsGame{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 200px;
+    padding: 0px 20px;
+}
+.CardsGame ul{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    place-items: center;
+    width: 50vw;
+    height: 50vw;    
+    perspective: 300px;
+}
+.CardsGame ul li{
+    position: relative;
+    display: block;
+    width: 90%;
+    height: 90%;
+    cursor: pointer;
+    backface-visibility: hidden;
+}
+.CardsGame ul li span{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+
+}
+.CardsGame ul li:hover .Front{
+    transform: rotateY(-180deg);
+}
+.CardsGame ul li:hover .Back{
+    transform: rotateY(0deg);
+} 
+.CardsGame ul li .Front{
+    transform: rotateY(0deg);
+    transition: all .5s;
+    background: repeating-linear-gradient(45deg,#fff,#fff 5%, #000 10%);
+    border-radius: 10%;
+    box-shadow:inset -5px -5px 5px rgba(150, 150, 150, .75), -5px -5px 5px rgba(150, 150, 150, .75);
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    border: 5px solid white;
+    transform: rotateY(180deg);
+    transition: all .5s;
+}
+.CardsGame ul li .Front img{
+    width: 100%;
+    border-radius: 10%;
+}
+.CardsGame ul li .Back{
+    background: repeating-linear-gradient(45deg,#fff,#fff 5%, #000 10%);
+    border-radius: 10%;
+    box-shadow:inset -5px -5px 5px rgba(150, 150, 150, .75), -5px -5px 5px rgba(150, 150, 150, .75);
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    border: 5px solid white;
+    transform: rotateY(180deg);
+    transition: all .5s;
+}
+.CardsGame .menu{
+    width: 40vw;
+    height: 50vw;
+}
+.CardsGame .menu form{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 50vw;
+}
+.CardsGame .menu form .status{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.CardsGame .menu form .status span{ 
+    width: 100%;
+    margin-top: 20px;
+}
+.CardsGame .menu form .status span label{
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    color: black;
+}
+.CardsGame .menu form .status span input{
+    all: unset;
+    width: calc(100% - 20px);
+    font-weight: bold;
+    font-size: 6rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px #333;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    padding-left: 20px;
+}
+.CardsGame .menu form .btns .btn{
+    all: unset;
+    font-size: 3rem;
+    font-weight: bold;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .9);
+    padding: 14px;
+    border-top: 1px solid #999;
+    border-left: 1px solid #999;
+    box-shadow:inset -5px -5px 10px rgba(255, 255, 255, .75), -5px -5px 10px rgba(255, 255, 255, .75);
+    cursor: pointer;
+    margin: 20px 20px;
+}
+
+.Special .stamp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    width: 100%;
+}
+.stamp .btn{
+    display: flex;
+    justify-content: center;
+    padding-top: 4px;
+    width: 240px;height: 60px;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    border-radius: 50px;
+    box-shadow:inset -5px -5px 10px rgba(255, 255, 255, .75), -5px -5px 10px rgba(255, 255, 255, .75);
+    background-color: rgba(255, 255, 255, .5);
+    cursor: pointer;
+}
+.stamp .grid{
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: 100px;
+    margin-left: 100px;
+}
+.stamp .grid span{
+    position: relative;
+    display: block;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 3px #333;
+}
+.stamp .grid span img{
+    position: absolute;
+    left: -4%;
+    top: -40%;
+    width: 100% ;
+    transform: scale(1.3);
+}
+.stamp .grid span p{
+    position: absolute;
+    display: block;
+    left: 50%;
+    bottom: 10%;
+    width: 100%;
+    text-align: center;
+    font-size: 1.4rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    transform: translateX(-50%);
+}
+.Cards{
+}
+.Review{
+    min-height: 130vh;
+} */
