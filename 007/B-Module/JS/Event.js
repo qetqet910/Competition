@@ -219,7 +219,7 @@ function CollCards(){
             EA.push(e.target)
             COLL.push(e.target.querySelector("span:nth-of-type(2) img").src);
 
-            if(COLL.length == 3) return;
+            if(COLL.length > 2) return;
             if(e.target.classList.value == "opened") return;
 
             if(My == ''){
@@ -343,6 +343,7 @@ sub.addEventListener('click', (e) => {
         Stamping();
         DirtyClear();
         AllCloseFC();
+        clearTimeout(Time);
         TimeCount.innerText = '00 : 00';
     }else{
         alert("값이 형식에 맞지 않습니다, 다시 한 번 확인해주십시오.")
@@ -391,4 +392,5 @@ function DirtyClear(){
     I = 0;
     gameStatus = false
     countClear();
+    clearTimeout(Time);
 }
