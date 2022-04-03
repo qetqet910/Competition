@@ -219,7 +219,7 @@ function CollCards(){
             EA.push(e.target)
             COLL.push(e.target.querySelector("span:nth-of-type(2) img").src);
 
-            if(COLL.length == 3) return;
+            if(COLL.length > 2) return;
             if(e.target.classList.value == "opened") return;
 
             if(My == ''){
@@ -272,6 +272,10 @@ function CollCards(){
 
 function countUp(){
     count++;
+    collected.value = count;
+}
+function countClear(){
+    count = 0;
     collected.value = count;
 }
 
@@ -339,6 +343,7 @@ sub.addEventListener('click', (e) => {
         Stamping();
         DirtyClear();
         AllCloseFC();
+        clearTimeout(Time);
         TimeCount.innerText = '00 : 00';
     }else{
         alert("값이 형식에 맞지 않습니다, 다시 한 번 확인해주십시오.")
@@ -360,7 +365,7 @@ function Stamping(){
     const Good = document.createElement('span');
     const Todays = document.createElement('span');
     Todays.innerText = Today;
-    Good.innerText = '👍';
+    Good.innerText = '⚜';
 
     if(Once == 1){
         C1.append(Good);
@@ -386,4 +391,6 @@ function DirtyClear(){
     Stack = 0;
     I = 0;
     gameStatus = false
+    countClear();
+    clearTimeout(Time);
 }

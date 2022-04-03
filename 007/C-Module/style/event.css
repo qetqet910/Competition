@@ -59,28 +59,7 @@ html{
     width: 100%;
     height: 600px;
     margin-bottom: 180px;
-    background: url(../img/Picture/photo1.jpg) no-repeat center;
-    background-size: 100%;
-    animation: imger 2s ease-in-out;
-    filter: blur(0px);
-}
-.Sec1::after{
-    content: '';
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    width: 100%;
-    height: 200px;
-    background: linear-gradient(to bottom, transparent, white);
-}
-.Sec1::before{
-    content: '';
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .2);
+    background-color: rgb(50, 50, 60);
 }
 .Sec1 span{
     display: block;
@@ -91,14 +70,6 @@ html{
     text-shadow: 2px 2px 4px royalblue;
     z-index: 999;
     margin-bottom: 60px;
-}
-@keyframes imger {
-    0%{
-        filter: blur(10px);
-    }
-    100%{
-        filter: blur(0px);
-    }
 }
 
 /* 이벤트 안내 영역 */
@@ -322,7 +293,7 @@ html{
     }
 }
 
-
+/* 출석체크 */
 
 form{
     position: absolute;

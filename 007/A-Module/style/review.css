@@ -86,7 +86,7 @@ body{
     width: 100%;
     height: 600px;
     margin-bottom: 180px;
-    background-color: #333;
+    background-color: rgb(50, 50, 60);
 }
 .Sec1 span{
     display: block;
@@ -194,7 +194,7 @@ body{
     margin-bottom: 2px;
     color: #333;
 }
-
+/* 별점 */
 .bottom .user .stars{
     display: flex;
     justify-content: flex-start;
@@ -221,7 +221,8 @@ body{
     justify-content: center;
     align-items: center;
     z-index: 10;
-    filter: hue-rotate(160deg);
+    color: var(--color-M3);
+    font-size: 2.4rem;
 }
 .bottom .user .stars span{
     display: block;
@@ -230,6 +231,7 @@ body{
     color: gray;
     font-weight: bold;
 }
+
 .bottom .des{
     margin-top: 20px;
     font-size: 1.8rem;
@@ -406,35 +408,6 @@ body{
 
 /* 별점 */
 
-#stars {
-    all: unset;
-    position: relative;
-    font-size: 2.8rem;
-    color: #ddd;
-    margin-bottom: 8px;
-}
-  
-#stars input {
-    all: unset;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
-}
-#stars span {
-    all: unset;
-    position: absolute; 
-    display: block;
-    top: 0px;
-    left: 0px;
-    width: 0%;
-    color: var(--color-M3);
-    overflow: hidden;
-    pointer-events: none;
-}
 .close{
     position: absolute;
     display: block;

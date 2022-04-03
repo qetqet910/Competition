@@ -86,7 +86,7 @@ body{
     width: 100%;
     height: 600px;
     margin-bottom: 180px;
-    background-color: #333;
+    background-color: rgb(50, 50, 60);
 }
 
 .Sec1 span{
@@ -187,7 +187,6 @@ body{
     margin-bottom: 2px;
     color: #333;
 }
-
 .bottom .user .stars{
     display: flex;
     justify-content: flex-start;
@@ -214,7 +213,8 @@ body{
     justify-content: center;
     align-items: center;
     z-index: 10;
-    filter: hue-rotate(160deg);
+    color: var(--color-M3);
+    font-size: 2.4rem;
 }
 .bottom .user .stars span{
     display: block;

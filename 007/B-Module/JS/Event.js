@@ -365,7 +365,7 @@ function Stamping(){
     const Good = document.createElement('span');
     const Todays = document.createElement('span');
     Todays.innerText = Today;
-    Good.innerText = '👍';
+    Good.innerText = '⚜';
 
     if(Once == 1){
         C1.append(Good);
